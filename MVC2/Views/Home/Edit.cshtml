@@ -1,0 +1,38 @@
+﻿@model MVC2.Models.Couple
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Пара № @Model.Id</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+
+        @Html.HiddenFor(m => m.Id)
+        <table>
+            <tr>
+                
+                  <td> @Html.LabelFor(m => m.Boy, "Жених   ")</td>
+                  <td> @Html.EditorFor(m => m.Boy)</td>
+                
+            </tr>
+            <tr>
+                
+                <td> @Html.LabelFor(m => m.Bride, "Невеста ")</td>
+                <td> @Html.EditorFor(m => m.Bride)</td>
+                    
+                
+            </tr>
+            <tr>
+                
+                <td> @Html.LabelFor(m => m.Surname, "Фамилия ")</td>
+                <td> @Html.EditorFor(m => m.Surname)</td>
+            </tr>
+        </table>
+        @Html.HiddenFor(m=>m.RegistrationDay )
+        <p><input type="submit" value="Сохранить изменения." />  </p>
+
+    </fieldset>
+}

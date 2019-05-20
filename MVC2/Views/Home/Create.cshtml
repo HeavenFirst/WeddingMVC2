@@ -1,0 +1,29 @@
+﻿@model MVC2.Models.Couple
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Новая пара:</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td> @Html.LabelFor(model => model.Boy)</td>
+            <td> @Html.EditorFor(model => model.Boy)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Bride)</td>
+            <td>@Html.EditorFor(model => model.Bride)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Surname)</td>
+            <td>@Html.EditorFor(model => model.Surname)</td>
+        </tr>
+    </table>
+    <br />
+    <input type="submit" value="Добавить пару"/>
+}
+
+

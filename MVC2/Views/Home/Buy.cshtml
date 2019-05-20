@@ -1,0 +1,62 @@
+﻿@* @model IEnumerable<MVC2.Models.Variant> *@
+ @model MVC2.Models.Variant   
+@*@{ 
+   // ViewBag.Title = "Выбор пары:";
+}
+*@
+<div>
+        <h3>Форма выбора пары</h3>
+        @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+        {
+            @Html.HiddenFor(m=>m.CoupleID)
+        <table>
+            <tr>
+                <td><p>@Html.LabelFor(m => m.toustmuster, "Введите имя тамады: ")</p></td>
+                <td><p>@Html.EditorFor( m=>m.toustmuster, Model.toustmuster)</p></td>
+            </tr>
+            <tr>
+                <td><p>@Html.LabelFor(m => m.Musicion, "Введите музыканта: ")</p></td>
+                <td><p>@Html.TextBoxFor(m=>m.Musicion, Model.Musicion)</p></td>
+            </tr>
+            <tr>
+                <td><p>@Html.LabelFor(m => m.Decor, "Введите декоратора: ")</p></td>
+                <td><p>@Html.TextBoxFor(m=>m.Decor, Model.Decor )</p></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Отправить вариант" /></td>
+                <td></td>
+            </tr>
+        </table>
+        @Html.ActionLink("Начало", "Index")
+        }
+
+    </div>
+
+
+@*
+    <div>
+            <h3>Форма выбора пары</h3>
+            <form method="post">
+            <input type="hidden" value="@ViewBag.CoupleID" name="CoupleID"/>
+            <table>
+                <tr>
+                    <td><p>Ввидите имя тамады</p></td>
+                    <td><input type="text" name="toustmuster"/></td>
+                </tr>
+                <tr>
+                    <td><p>Ввидите музыканта</p></td>
+                    <td><input type="text" name="Musicion"/></td>
+                </tr>
+                <tr>
+                    <td><p>Ввидите имя декоратора </p></td>
+                    <td><input type="text" name="Decor" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Вариант" /></td>
+                </tr>
+            </table>
+           </form>
+        </div>
+
+
+*@

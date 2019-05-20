@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVC2.Models.Variant>
+
+@{
+    ViewBag.Title = "Look";
+}
+
+<h2>Look</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.toustmuster)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Musicion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Decor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoupleID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.toustmuster)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Musicion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Decor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CoupleID)
+        </td>
+       
+    </tr>
+}
+
+</table>

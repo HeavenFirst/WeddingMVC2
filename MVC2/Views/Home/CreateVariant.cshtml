@@ -1,0 +1,36 @@
+﻿@model MVC2.Models.Variant
+
+@{
+    ViewBag.Title = "CreateVariant";
+}
+
+<h2>Введите вариант</h2>
+<div>
+    @using (Html.BeginForm("CreateVariant", "Home", FormMethod.Post))
+    {
+        
+        <table>
+            <tr>
+                <td><p>@Html.LabelFor(m => m.toustmuster, "Введите имя тамады: ")</p></td>
+                <td><p>@Html.EditorFor(m => m.toustmuster, Model.toustmuster)</p></td>
+            </tr>
+            <tr>
+                <td><p>@Html.LabelFor(m => m.Musicion, "Введите музыканта: ")</p></td>
+                <td><p>@Html.TextBoxFor(m => m.Musicion, Model.Musicion)</p></td>
+            </tr>
+            <tr>
+                <td><p>@Html.LabelFor(m => m.Decor, "Введите декоратора: ")</p></td>
+                <td><p>@Html.TextBoxFor(m => m.Decor, Model.Decor)</p></td>
+            </tr>
+            <tr>
+                <td><p>@Html.LabelFor(m => m.CoupleID, "Выберите пару: ")</p></td>
+                <td>@Html.DropDownListFor(m => m.CoupleID , ViewBag.Coups as SelectList)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Отправить вариант" /></td>
+                <td></td>
+            </tr>
+        </table>
+       }
+</div>
+

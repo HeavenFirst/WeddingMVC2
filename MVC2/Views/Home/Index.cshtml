@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Свадебные пары";
+}
+<div>
+    <h3>Свадебные пары:</h3>
+    <table>
+        <tr>
+            <td><p> Имя жениха </p></td>
+            <td><p> Имя невесты </p></td>
+            <td><p> Фамилия </p></td>
+            <td><p> Дата обращенния </p></td>
+            <td><p>           </p></td>
+            <td><p>           </p></td>
+            <td><p>           </p></td>
+        </tr>
+        @foreach (var b in ViewBag.Couples)
+        {
+            <tr>
+                <td><p> @b.Boy </p></td>
+                <td><p> @b.Bride </p></td>
+                <td><p> @b.Surname </p></td>
+                <td><p> @b.RegistrationDay </p></td>
+                <td><p><a href="\Home\Buy\@b.Id"> Выбрать </a></p></td>
+                <td><p><a href="\Home\Edit\@b.Id"> Изменить </a></p></td>
+                <td><p><a href="\Home\Look\@b.Id"> Просмотреть </a></p></td>
+            </tr>
+        }
+    </table>
+    <p><a href="\Home\Create"> Добавить пару </a></p>
+    @Html.ActionLink("Создать вариант","CreateVariant")
+</div>
